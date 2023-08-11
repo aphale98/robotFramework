@@ -8,32 +8,36 @@ Library           SeleniumLibrary
 
 
 *** Variables ***
-${user_name}             rahulshettyacademy
-${invalid_password}      123445
-${valid_password}        learning
-${url}                   https://rahulshettyacademy.com/loginpagePractise/
-${browser_name}          Chrome
-${Error_Msg_Login}       css:.alert-danger
+${user_name}                rahulshettyacademy
+${invalid_password}         123445
+${valid_password}           learning
+${url}                      https://rahulshettyacademy.com/loginpagePractise/
+${browser_name}             Chrome
+${Error_Message_Login}      css:.alert-danger
+${Shop_page_load}           css:.nav-link
+
 
 
 
 
 *** Keywords ***
 
-open the browser with the Mortgage payment url
+Open the browser with the Mortgage payment url
     Create Webdriver    ${browser_name}
     Go To   ${url}
 
-open the browser with the url
-    Create Webdriver    ${browser_name}
-    Go To   ${url}
+Fill the login Form
+    [arguments]     ${username}     ${password}
+    Input Text          id:username     ${username}
+    Input Password      id:password     ${password}
+    Click Button        signInBtn
+
+Wait until Element is located in the page
+    [arguments]     ${element}
+    Wait Until Element Is Visible       ${element}
 
 Close Browser session
     Close Browser
-
-Wait Until element passed is located on Page
-    [arguments]         ${page_locator}
-    Wait Until Element Is Visible        ${page_locator}        timeout=10
 
 
 

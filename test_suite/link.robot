@@ -1,16 +1,11 @@
 *** Settings ***
-Documentation   To validate the Login form
+Documentation   To validate the clickable link
 Library     SeleniumLibrary
 Library     String
 Test Setup      open the browser with the Mortgage payment url
-Test Teardown   Close Browser
+Test Teardown   Close Browser session
 Library     Collections
 Resource        ./resources/resources.robot
-
-
-*** Variables ***
-${Error_Message_Login}      css:.alert-danger
-
 
 
 *** Test Cases ***
@@ -19,7 +14,7 @@ Validate Child window Functionality
     Select the link of Child window
     Verify the user is Switched to Child window
     Grab the Email id in the Child Window
-   Switch to Parent window and enter the Email
+    Switch to Parent window and enter the Email
 
 
 *** Keywords ***
@@ -42,7 +37,7 @@ Grab the Email id in the Child Window
      @{words_2}=   Split String    ${text_split}
      #0->mentor@rahulshettyacademy.com
      ${email}=      Get From List    ${words_2}    0
-     Set Global Variable         ${email}x
+     Set Global Variable         ${email}
 
 
 Switch to Parent window and enter the Email
