@@ -10,11 +10,11 @@ Validate UnSuccesful Login
     Open the browser with the Mortgage payment url
     Fill the login Form     ${user_name}    ${invalid_password}
     Wait until Element is located in the page     ${Error_Message_Login}
-    verify error message is correct
+    Verify Error Message Is Correct
+
 
 *** Keywords ***
-
-verify error message is correct
+Verify Error Message Is Correct
    ${result}=   Get Text    ${Error_Message_Login}
    Should Be Equal As Strings     ${result}     Incorrect username/password.
    Element Text Should Be       ${Error_Message_Login}      Incorrect username/password.

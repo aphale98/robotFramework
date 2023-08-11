@@ -8,6 +8,6 @@ Declared and used variables in robot file for global use.
 
 Used Resource file/Keywords to overcome reusable code.
 
-Send arguments to keywords from the test and from the variable.
+Sent arguments to keywords from the test and from the variable.
 
-...
+Tested the login for different User's using template arguments.
