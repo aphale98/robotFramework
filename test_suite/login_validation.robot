@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     To validate the login form with diffrent username's
 Library           SeleniumLibrary
-#Test Teardown     Close Browser session
+Test Teardown     Close Browser session
 Test Template     Validate Unsuccessful Login
 Resource    resources/resources.robot
 
