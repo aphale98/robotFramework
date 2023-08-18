@@ -36,37 +36,3 @@ Select the Cart
          ${index}=  Evaluate   ${index} + 1
      END
     Click Button    xpath:(//*[@class='card-footer'])[${index}]/button
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
